@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8"/>
+<title>Insert title here</title>
+</head>
+<body>
+<form action="user" th:object="${user}">
+			
+			编号:<input type="text" th:if="${id}!=0" th:value="${user.id}" th:field="*{id}" />
+				<input type="text" th:if="${id}==0" name="id" /> 
+	 		姓名：<input type="text" th:if="${id}!=0" th:value="${user.username}" th:field="*{username}" />
+	 			<input type="text" th:if="${id}==0" name="username" />
+			邮箱：<input type="text" th:if="${id}!=0" th:value="${user.email}" th:field="*{email}" />
+				<input type="text" th:if="${id}==0" name="email" />
+		<input type="submit" value="提交" />
+	</form>
+
+</body>
+</html>
